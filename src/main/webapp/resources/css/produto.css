@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho {
+    background-color: #283e8f;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+.formulario {
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario input[type="text"] {
+    width: 1000px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.formulario .inputMetodos button{
+    text-align: center;
+    background-color: #283e8f;
+}
+
+.lista{
+    padding: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario.inputMetodos{
+    align-items: center;
+}
+
+/* Menu lateral */
+
+.menu {
+    width: 200px;
+    background-color: #283e8f;
+    padding: 15px;
+    height: 100vh; /* Full-height: habilita altura completa */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    top: 105px; /* Ajustado para ficar abaixo do cabeçalho */
+    left: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: auto; /* Enable vertical scroll if needed */
+}
+
+
+/* Botões do menu */
+.menu button, .menu commandButton {
+    display: block;
+    width: 100%;
+    padding: 20px 20px;
+    margin-bottom: 3px;
+    background-color: #283e8f;
+    color: #ffffff;
+    border: none;
+    text-align: left;
+    font-size: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.menu button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    background-color: #3a50b3;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+/* Estilo do botão ao passar o mouse */
+.menu button:hover {
+    background-color: #253275;
+    transform: translateX(5px);
+}
+
+.menu button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Área de conteúdo para empurrar para a direita devido ao menu fixo */
+.content {
+    margin-left: 250px; /* Same width as the sidebar */
+    padding: 20px;
+    padding-top: 80px; /* Ajustar para ficar abaixo do cabeçalho */
+}
+
+/* Adicionar estilo para os ícones se necessário */
+.menu i {
+    margin-right: 10px;
+}
+
+.logo {
+    width: 160px; /* Largura desejada da logo */
+    height: auto; /* Altura ajustável para manter a proporção da imagem */
+    margin: 42px auto; /* Margens automáticas para centralizar a logo horizontalmente */
+    display: block; /* Permite ajustar margens horizontalmente com 'auto' */
+}
+
+.logo img {
+    display: block; /* Para remover qualquer espaço extra ao redor da imagem */
+    width: 100%; /* Para preencher a largura do contêiner pai */
+    height: auto; /* Para manter a proporção da imagem */
+}

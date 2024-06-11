@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Registro de Consumo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="StyleSheet" type="text/css" href="resources/css/consumo.css" media="screen"></link>
+
+<!--    <style>-->
+
+<!--        .cabecalho h1 {-->
+<!--            background-color: #283e8f;-->
+<!--            color: #ffffff;-->
+<!--            padding: 20px;-->
+<!--            text-align: center;-->
+<!--        }-->
+
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--            background-color: #f2f2f2;-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--        }-->
+<!--        #formConsumo {-->
+<!--            width: 400px;-->
+<!--            margin: 50px auto;-->
+<!--            background-color: #fff;-->
+<!--            padding: 20px;-->
+<!--            border-radius: 8px;-->
+<!--            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);-->
+<!--        }-->
+<!--        #formConsumo label {-->
+<!--            display: block;-->
+<!--            margin-bottom: 10px;-->
+<!--        }-->
+<!--        #formConsumo input[type="text"],-->
+<!--        #formConsumo select {-->
+<!--            width: 100%;-->
+<!--            padding: 10px;-->
+<!--            margin-bottom: 20px;-->
+<!--            border: 1px solid #ccc;-->
+<!--            border-radius: 5px;-->
+<!--            box-sizing: border-box;-->
+<!--        }-->
+<!--        #formConsumo .btn-group {-->
+<!--            text-align: center;-->
+<!--        }-->
+<!--        #formConsumo .btn-group button {-->
+<!--            padding: 10px 20px;-->
+<!--            margin: 0 10px;-->
+<!--            border: none;-->
+<!--            border-radius: 5px;-->
+<!--            cursor: pointer;-->
+<!--            background-color: #007bff;-->
+<!--            color: #fff;-->
+<!--            font-size: 16px;-->
+<!--            text-transform: uppercase;-->
+<!--            transition: background-color 0.3s;-->
+<!--        }-->
+<!--        #formConsumo .btn-group button:hover {-->
+<!--            background-color: #0056b3;-->
+
+<!--        }-->
+
+<!--        .myButton .salvar, .atualizar, .limpar{-->
+<!--            display:inline-block;-->
+<!--            cursor:pointer;-->
+<!--            font-family:Arial;-->
+<!--            font-size:19px;-->
+<!--            padding:11px 150px;-->
+
+<!--        }-->
+<!--        .myButton:active {-->
+<!--            position:relative;-->
+<!--            top:1px;-->
+<!--        }-->
+
+<!--        .lista{-->
+<!--            padding: 0px;-->
+<!--            margin-bottom: 20px;-->
+<!--            display: flex;-->
+<!--            flex-direction: column;-->
+<!--            align-items: center;-->
+
+<!--        }-->
+
+<!--        /* Cabeçalho */-->
+<!--        .headerMenu {-->
+<!--            background-color: #283e8f;-->
+<!--            color: white;-->
+<!--            padding: 30px;-->
+<!--            text-align: center;-->
+<!--            width: 100%;-->
+<!--            position: fixed;-->
+<!--            top: 0;-->
+<!--            left: 0;-->
+<!--        }-->
+
+<!--        /* Menu lateral */-->
+<!--        .menu {-->
+<!--            width: 200px;-->
+<!--            background-color: #283e8f;-->
+<!--            padding: 15px;-->
+<!--            height: 100vh; /* Full-height: habilita altura completa */-->
+<!--            position: fixed; /* Fixed Sidebar (stay in place on scroll) */-->
+<!--            top: 90px; /* Ajustado para ficar abaixo do cabeçalho */-->
+<!--            left: 0;-->
+<!--            overflow-x: hidden; /* Disable horizontal scroll */-->
+<!--            overflow-y: auto; /* Enable vertical scroll if needed */-->
+<!--        }-->
+
+
+<!--        /* Botões do menu */-->
+<!--        .menu button, .menu commandButton {-->
+<!--            display: block;-->
+<!--            width: 100%;-->
+<!--            padding: 20px 20px;-->
+<!--            margin-bottom: 3px;-->
+<!--            background-color: #283e8f;-->
+<!--            color: #ffffff;-->
+<!--            border: none;-->
+<!--            text-align: left;-->
+<!--            font-size: 25px;-->
+<!--            cursor: pointer;-->
+<!--            transition: background-color 0.3s;-->
+<!--        }-->
+<!--        .menu button {-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            width: 100%;-->
+<!--            padding: 15px 20px;-->
+<!--            margin-bottom: 10px;-->
+<!--            background-color: #3a50b3;-->
+<!--            color: #ffffff;-->
+<!--            border: none;-->
+<!--            border-radius: 4px;-->
+<!--            text-align: left;-->
+<!--            font-size: 16px;-->
+<!--            cursor: pointer;-->
+<!--            transition: background-color 0.3s, transform 0.3s;-->
+<!--        }-->
+<!--        /* Estilo do botão ao passar o mouse */-->
+<!--        .menu button:hover {-->
+<!--            background-color: #253275;-->
+<!--            transform: translateX(5px);-->
+<!--        }-->
+
+<!--        .menu button:focus {-->
+<!--            outline: none;-->
+<!--            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);-->
+<!--        }-->
+
+<!--        /* Área de conteúdo para empurrar para a direita devido ao menu fixo */-->
+<!--        .content {-->
+<!--            margin-left: 250px; /* Same width as the sidebar */-->
+<!--            padding: 20px;-->
+<!--            padding-top: 80px; /* Ajustar para ficar abaixo do cabeçalho */-->
+<!--        }-->
+
+<!--        /* Adicionar estilo para os ícones se necessário */-->
+<!--        .menu i {-->
+<!--            margin-right: 10px;-->
+<!--        }-->
+
+<!--        .logo {-->
+<!--            width: 160px; /* Largura desejada da logo */-->
+<!--            height: auto; /* Altura ajustável para manter a proporção da imagem */-->
+<!--            margin: 42px auto; /* Margens automáticas para centralizar a logo horizontalmente */-->
+<!--            display: block; /* Permite ajustar margens horizontalmente com 'auto' */-->
+<!--        }-->
+
+<!--        .logo img {-->
+<!--            display: block; /* Para remover qualquer espaço extra ao redor da imagem */-->
+<!--            width: 100%; /* Para preencher a largura do contêiner pai */-->
+<!--            height: auto; /* Para manter a proporção da imagem */-->
+<!--        }-->
+<!--    </style>-->
+
+</h:head>
+<h:body>
+    <div class="cabecalho">
+    <h1>Consumo</h1>
+    </div>
+
+
+    <div class="menu">
+
+    <button onclick="window.location.href='CadastroCliente.xhtml'">
+        <i class="fa fa-user"></i> Cliente
+    </button>
+    <button onclick="window.location.href='Produtos.xhtml'">
+        <i class="fa fa-box"></i> Produto
+    </button>
+    <button onclick="window.location.href='Consumo.xhtml'">
+        <i class="fa fa-utensils"></i> Consumo
+    </button>
+    <button onclick="window.location.href='Reservas.xhtml'">
+        <i class="fa fa-calendar-check"></i> Reservas
+    </button>
+    <button onclick="window.location.href='CheckIn.xhtml'">
+        <i class="fa fa-sign-in-alt"></i> Check-in
+    </button>
+    <button onclick="window.location.href='CheckOut.xhtml'">
+        <i class="fa fa-sign-out-alt"></i> Check-out
+    </button>
+    <button onclick="window.location.href='Pagamentos.xhtml'">
+        <i class="fa fa-credit-card"></i> Pagamentos
+    </button>
+    <button onclick="window.location.href='Servicos.xhtml'">
+        <i class="fa fa-concierge-bell"></i> Serviços
+    </button>
+    <button onclick="window.location.href='Relatorios.xhtml'">
+        <i class="fa fa-chart-line"></i> Relatórios
+    </button>
+    <button onclick="window.location.href='Configuracoes.xhtml'">
+        <i class="fa fa-cogs"></i> Configurações
+    </button>
+
+        <div class="logo">
+            <h:graphicImage name="/img/SISTEMA HOTELEIRO-Photoroom.png" />
+        </div>
+    </div>
+
+
+    <h:form id="formConsumo">
+    <h:outputLabel value="Cliente:" />
+    <h:selectOneMenu value="#{consumoBean.clienteId}">
+        <f:selectItem itemLabel="Selecione um cliente..." noSelectionOption="true" />
+        <f:selectItems value="#{clienteBean.listaClientes}" var="cliente"
+                       itemLabel="#{cliente.nome}" itemValue="#{cliente.id}" />
+    </h:selectOneMenu>
+
+    <h:outputLabel value="Produto:" />
+    <h:inputText value="#{consumoBean.produto}" />
+
+    <h:outputLabel value="Quantidade:" />
+    <h:inputText value="#{consumoBean.quantidade}" />
+
+    <h:outputLabel value="Valor:" />
+    <h:inputText value="#{consumoBean.valor}" />
+
+    <div class="btn-group">
+        <h:commandButton value="Registrar Consumo" action="#{consumoBean.registrarConsumo}" />
+    </div>
+
+    <h:messages/>
+</h:form>
+</h:body>
+</html>
+
+

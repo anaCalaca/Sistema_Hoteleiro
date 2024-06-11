@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Gestão de Produtos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="resources/css/produto.css" media="screen"></link>
+
+</h:head>
+<h:body>
+
+    <div class="menu">
+        <button onclick="window.location.href='CadastroCliente.xhtml'">
+            <i class="fa fa-user"></i> Cliente
+        </button>
+        <button onclick="window.location.href='Produtos.xhtml'">
+            <i class="fa fa-box"></i> Produto
+        </button>
+        <button onclick="window.location.href='Consumo.xhtml'">
+            <i class="fa fa-utensils"></i> Consumo
+        </button>
+        <button onclick="window.location.href='Reservas.xhtml'">
+            <i class="fa fa-calendar-check"></i> Reservas
+        </button>
+        <button onclick="window.location.href='CheckIn.xhtml'">
+            <i class="fa fa-sign-in-alt"></i> Check-in
+        </button>
+        <button onclick="window.location.href='CheckOut.xhtml'">
+            <i class="fa fa-sign-out-alt"></i> Check-out
+        </button>
+        <button onclick="window.location.href='Pagamentos.xhtml'">
+            <i class="fa fa-credit-card"></i> Pagamentos
+        </button>
+        <button onclick="window.location.href='Servicos.xhtml'">
+            <i class="fa fa-concierge-bell"></i> Serviços
+        </button>
+        <button onclick="window.location.href='Relatorios.xhtml'">
+            <i class="fa fa-chart-line"></i> Relatórios
+        </button>
+        <button onclick="window.location.href='Configuracoes.xhtml'">
+            <i class="fa fa-cogs"></i> Configurações
+        </button>
+
+        <div class="logo">
+            <h:graphicImage name="/img/SISTEMA HOTELEIRO-Photoroom.png" />
+        </div>
+    </div>
+
+    <header class="cabecalho">
+        <h1>Cadastro de Produto</h1>
+    </header>
+
+    <div class="formulario">
+        <h:form id="produtoForm">
+            <!-- Formulário para inserir ou atualizar produto -->
+            <h:panelGrid columns="2">
+                <h:outputLabel for="nome" value="Nome:" />
+                <h:inputText id="nome" value="#{produtoBean.produto.nome}" required="true">
+                    <f:passThroughAttribute name="placeholder" value="Nome do produto" />
+                </h:inputText>
+
+                <h:outputLabel for="fabricante" value="Fabricante:" />
+                <h:inputText id="fabricante" value="#{produtoBean.produto.fabricante}" required="true">
+                    <f:passThroughAttribute name="placeholder" value="Nome do fornecedor" />
+                </h:inputText>
+
+                <h:outputLabel for="valor" value="Valor:" />
+                <h:inputText id="valor" value="#{produtoBean.produto.valor}" required="true">
+                    <f:passThroughAttribute name="placeholder" value="Valor" />
+                </h:inputText>
+
+                <h:outputLabel for="validade" value="Validade:" />
+                <h:inputText id="validade" value="#{produtoBean.produto.validade}" required="true">
+                    <f:passThroughAttribute name="placeholder" value="Data de validade" />
+                </h:inputText>
+
+                <h:outputLabel for="quantidade" value="Quantidade:" />
+                <h:inputText id="quantidade" value="#{produtoBean.produto.quantidade}" required="true">
+                    <f:passThroughAttribute name="placeholder" value="Quantidade" />
+                </h:inputText>
+            </h:panelGrid>
+
+            <!-- Botões de ação -->
+            <div class="inputMetodos">
+                <h:commandButton value="Salvar" action="#{produtoBean.inserirProduto}" />
+                <h:commandButton value="Atualizar" action="#{produtoBean.atualizarProduto}" />
+            </div>
+        </h:form>
+    </div>
+
+    <!-- Listagem de produtos -->
+    <div class="lista">
+        <h2>Lista De Produtos</h2>
+        <h:form id="listaProdutosForm">
+            <h:dataTable value="#{produtoBean.itens}" var="produto" border="1">
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                    #{produto.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Nome</f:facet>
+                    #{produto.nome}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Fabricante</f:facet>
+                    #{produto.fabricante}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Valor</f:facet>
+                    #{produto.valor}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Validade</f:facet>
+                    #{produto.validade}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Quantidade</f:facet>
+                    #{produto.quantidade}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Ações</f:facet>
+                    <h:commandButton value="Editar" action="#{produtoBean.setProduto(produto)}" />
+                    <h:commandButton value="Remover" action="#{produtoBean.removerProduto(produto)}" />
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </div>
+</h:body>
+</html>

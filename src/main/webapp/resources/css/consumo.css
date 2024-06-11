@@ -1,0 +1,167 @@
+ h1{
+    background-color: #283e8f;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+#formConsumo {
+    width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#formConsumo label {
+    display: block;
+    margin-bottom: 10px;
+}
+#formConsumo input[type="text"],
+#formConsumo select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+#formConsumo .btn-group {
+    text-align: center;
+}
+#formConsumo .btn-group button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+#formConsumo .btn-group button:hover {
+    background-color: #0056b3;
+
+}
+
+.myButton .salvar, .atualizar, .limpar{
+    display:inline-block;
+    cursor:pointer;
+    font-family:Arial;
+    font-size:19px;
+    padding:11px 150px;
+
+}
+.myButton:active {
+    position:relative;
+    top:1px;
+}
+
+.lista{
+    padding: 0px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* Cabeçalho */
+.headerMenu {
+    background-color: #283e8f;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* Menu lateral */
+.menu {
+    width: 200px;
+    background-color: #283e8f;
+    padding: 15px;
+    height: 100vh; /* Full-height: habilita altura completa */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    top: 90px; /* Ajustado para ficar abaixo do cabeçalho */
+    left: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: auto; /* Enable vertical scroll if needed */
+}
+
+
+/* Botões do menu */
+.menu button, .menu commandButton {
+    display: block;
+    width: 100%;
+    padding: 20px 20px;
+    margin-bottom: 3px;
+    background-color: #283e8f;
+    color: #ffffff;
+    border: none;
+    text-align: left;
+    font-size: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.menu button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    background-color: #3a50b3;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+/* Estilo do botão ao passar o mouse */
+.menu button:hover {
+    background-color: #253275;
+    transform: translateX(5px);
+}
+
+.menu button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Área de conteúdo para empurrar para a direita devido ao menu fixo */
+.content {
+    margin-left: 250px; /* Same width as the sidebar */
+    padding: 20px;
+    padding-top: 80px; /* Ajustar para ficar abaixo do cabeçalho */
+}
+
+/* Adicionar estilo para os ícones se necessário */
+.menu i {
+    margin-right: 10px;
+}
+
+.logo {
+    width: 160px; /* Largura desejada da logo */
+    height: auto; /* Altura ajustável para manter a proporção da imagem */
+    margin: 42px auto; /* Margens automáticas para centralizar a logo horizontalmente */
+    display: block; /* Permite ajustar margens horizontalmente com 'auto' */
+}
+
+.logo img {
+    display: block; /* Para remover qualquer espaço extra ao redor da imagem */
+    width: 100%; /* Para preencher a largura do contêiner pai */
+    height: auto; /* Para manter a proporção da imagem */
+}
+

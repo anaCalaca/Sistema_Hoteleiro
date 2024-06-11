@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Cliente</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="StyleSheet" type="text/css" href="resources/css/cliente.css" media="screen"></link>
+
+</h:head>
+<h:body>
+
+    <header class="cabecalho">
+        <h1>Cadastro de cliente</h1>
+    </header>
+
+
+<div class="menu">
+
+    <button onclick="window.location.href='CadastroCliente.xhtml'">
+        <i class="fa fa-user"></i> Cliente
+    </button>
+    <button onclick="window.location.href='Produtos.xhtml'">
+        <i class="fa fa-box"></i> Produto
+    </button>
+    <button onclick="window.location.href='Consumo.xhtml'">
+        <i class="fa fa-utensils"></i> Consumo
+    </button>
+    <button onclick="window.location.href='Reservas.xhtml'">
+        <i class="fa fa-calendar-check"></i> Reservas
+    </button>
+    <button onclick="window.location.href='CheckIn.xhtml'">
+        <i class="fa fa-sign-in-alt"></i> Check-in
+    </button>
+    <button onclick="window.location.href='CheckOut.xhtml'">
+        <i class="fa fa-sign-out-alt"></i> Check-out
+    </button>
+    <button onclick="window.location.href='Pagamentos.xhtml'">
+        <i class="fa fa-credit-card"></i> Pagamentos
+    </button>
+    <button onclick="window.location.href='Servicos.xhtml'">
+        <i class="fa fa-concierge-bell"></i> Serviços
+    </button>
+    <button onclick="window.location.href='Relatorios.xhtml'">
+        <i class="fa fa-chart-line"></i> Relatórios
+    </button>
+    <button onclick="window.location.href='Configuracoes.xhtml'">
+        <i class="fa fa-cogs"></i> Configurações
+    </button>
+
+    <div class="logo">
+        <h:graphicImage name="/img/SISTEMA HOTELEIRO-Photoroom.png" />
+    </div>
+</div>
+
+<nav class="formulario">
+    <h:form id="formTeste">
+        <div class="inputNome">
+            <h:outputLabel for="NomeCompleto" value="Nome:" styleClass="inputNome"/>
+            <h:inputText id="NomeCompleto" required="true" value="#{clienteBean.cliente.nome}">
+                <f:passThroughAttribute name="placeholder" value="Nome Completo" />
+            </h:inputText>
+        </div>
+
+        <div class="inputTelefone">
+            <h:outputLabel for="Telefone" value="Telefone:"/>
+            <h:inputText id="Telefone" required="true" value="#{clienteBean.cliente.telefone}">
+                <f:passThroughAttribute name="placeholder" value="Digite seu Telefone" />
+            </h:inputText>
+        </div>
+
+        <div class="inputCPF">
+            <h:outputLabel for="CPF" value="CPF:"/>
+            <h:inputText id="CPF" required="true" value="#{clienteBean.cliente.cpf}">
+                <f:passThroughAttribute name="placeholder" value="Digite seu CPF:" />
+            </h:inputText>
+        </div>
+
+        <div class="inputEmail">
+            <h:outputLabel for="Email" value="Email:"/>
+            <h:inputText id="Email" required="true" value="#{clienteBean.cliente.email}">
+                <f:passThroughAttribute name="placeholder" value="Digite seu Email:" />
+            </h:inputText>
+        </div>
+
+        <div class="inputEndereco">
+            <h:outputLabel for="Endereco" value="Endereço:"/>
+            <h:inputText id="Endereco" value="#{clienteBean.cliente.endereco}">
+                <f:passThroughAttribute name="placeholder" value="Bairro, rua, número:" />
+            </h:inputText>
+        </div>
+
+        <div class="inputCEP">
+            <h:outputLabel for="CEP" value="CEP:"/>
+            <h:inputText id="CEP" value="#{clienteBean.cliente.cep}">
+                <f:passThroughAttribute name="placeholder" value="Digite seu CEP:" />
+            </h:inputText>
+        </div>
+
+        <div class="inputEstado">
+            <h:outputLabel for="estado" value="Estado:" />
+            <h:selectOneMenu id="estado" value="#{clienteBean.cliente.estado}">
+                <f:selectItem itemLabel="Selecione um estado" itemValue="" />
+                <f:selectItem itemValue="AC" itemLabel="Acre" />
+                <f:selectItem itemValue="AL" itemLabel="Alagoas" />
+                <f:selectItem itemValue="AP" itemLabel="Amapá" />
+                <f:selectItem itemValue="AM" itemLabel="Amazonas" />
+                <f:selectItem itemValue="BA" itemLabel="Bahia" />
+                <f:selectItem itemValue="CE" itemLabel="Ceará" />
+                <f:selectItem itemValue="DF" itemLabel="Distrito Federal" />
+                <f:selectItem itemValue="ES" itemLabel="Espírito Santo" />
+                <f:selectItem itemValue="GO" itemLabel="Goiás" />
+                <f:selectItem itemValue="MA" itemLabel="Maranhão" />
+                <f:selectItem itemValue="MT" itemLabel="Mato Grosso" />
+                <f:selectItem itemValue="MS" itemLabel="Mato Grosso do Sul" />
+                <f:selectItem itemValue="MG" itemLabel="Minas Gerais" />
+                <f:selectItem itemValue="PA" itemLabel="Pará" />
+                <f:selectItem itemValue="PB" itemLabel="Paraíba" />
+                <f:selectItem itemValue="PR" itemLabel="Paraná" />
+                <f:selectItem itemValue="PE" itemLabel="Pernambuco" />
+                <f:selectItem itemValue="PI" itemLabel="Piauí" />
+                <f:selectItem itemValue="RJ" itemLabel="Rio de Janeiro" />
+                <f:selectItem itemValue="RN" itemLabel="Rio Grande do Norte" />
+                <f:selectItem itemValue="RS" itemLabel="Rio Grande do Sul" />
+                <f:selectItem itemValue="RO" itemLabel="Rondônia" />
+                <f:selectItem itemValue="RR" itemLabel="Roraima" />
+                <f:selectItem itemValue="SC" itemLabel="Santa Catarina" />
+                <f:selectItem itemValue="SP" itemLabel="São Paulo" />
+                <f:selectItem itemValue="SE" itemLabel="Sergipe" />
+                <f:selectItem itemValue="TO" itemLabel="Tocantins" />
+            </h:selectOneMenu>
+        </div>
+
+        <div class="inputCidade">
+            <h:outputLabel for="Cidade" value="Cidade:"/>
+            <h:inputText id="Cidade" placeholder="Digite sua cidade:" value="#{clienteBean.cliente.cidade}">
+                <f:passThroughAttribute name="placeholder" value="Qual cidade reside:" />
+            </h:inputText>
+        </div>
+
+        <div class="inputNovidade">
+            <h:outputLabel for="novidades" value="Deseja receber nossas novidades?" />
+            <h:selectOneRadio id="novidades" value="#{clienteBean.cliente.oferta}">
+                <f:selectItem itemLabel="Sim" itemValue="true" />
+                <f:selectItem itemLabel="Não" itemValue="false" />
+            </h:selectOneRadio>
+        </div>
+
+        <div class="myButton">
+            <div class="salvar">
+            <h:commandButton value="Salvar" action="#{clienteBean.inserirCliente()}"></h:commandButton>
+            </div>
+
+            <div class="atualizar">
+            <h:commandButton value="Atualizar" action="#{clienteBean.atualizarClientes()}"></h:commandButton>
+            </div>
+
+            <div class="limpar">
+            <h:commandButton value="Limpar" action="#{clienteBean.limparCliente()}"></h:commandButton>
+            </div>
+            </div>
+    </h:form>
+</nav>
+
+<h:form id="clienteListForm">
+    <div class="lista">
+    <h2>Lista de Clientes</h2>
+    <h:dataTable value="#{clienteBean.clientes}" var="cliente" border="1">
+        <h:column>
+            <f:facet name="header">Nome</f:facet>
+            #{cliente.nome}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Telefone</f:facet>
+            #{cliente.telefone}
+        </h:column>
+        <h:column>
+            <f:facet name="header">CPF</f:facet>
+            #{cliente.cpf}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Email</f:facet>
+            #{cliente.email}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Endereço</f:facet>
+            #{cliente.endereco}
+        </h:column>
+        <h:column>
+            <f:facet name="header">CEP</f:facet>
+            #{cliente.cep}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Estado</f:facet>
+            #{cliente.estado}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Cidade</f:facet>
+            #{cliente.cidade}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Ofertas</f:facet>
+            #{cliente.oferta ? 'Sim' : 'Não'}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Ações</f:facet>
+            <h:commandButton value="Editar" action="#{clienteBean.editarCliente(cliente)}" />
+            <h:commandButton value="Excluir" action="#{clienteBean.removerCliente(cliente)}" />
+        </h:column>
+    </h:dataTable>
+    </div>
+</h:form>
+
+<footer>
+    <!-- Conteúdo do rodapé aqui -->
+</footer>
+
+</h:body>
+</html>
